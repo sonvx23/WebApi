@@ -1,12 +1,12 @@
 import express from "express";
+import homeController from "../controllers/homeController";
 
 let router = express.Router();
 
-let initWebRouters = (app) =>{
-    router.get("/",(req,res) =>{
+//Dung Restful Api CRUD : create Read Update Delete
 
-        return res.send("test ABC");
-    });
+let initWebRouters = (app) =>{
+    router.get("/", homeController.getHomePage);
     return app.use("/",router);
     //return app.use("/v1/api/",router); tao link api
 }
