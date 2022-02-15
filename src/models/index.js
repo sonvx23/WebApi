@@ -1,11 +1,12 @@
 'use strict';
+require('dotenv').config;
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs'); //to read the files inside the models folder, which is going to contain all the models
+const path = require('path'); //to join the path of each file in the current directory
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../../config.json')[env];
+const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
 let sequelize;
